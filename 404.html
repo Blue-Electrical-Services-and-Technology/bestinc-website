@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="ds/tokens/colors.css">
+  <link rel="stylesheet" href="ds/tokens/typography.css">
+  <link rel="stylesheet" href="ds/tokens/spacing.css">
+  <link rel="stylesheet" href="ds/styles.css">
+  <script src="ds/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0">
+  <title>Blue Electrical Services &amp; Technology | Licensed Electricians in Calgary</title>
+  <meta name="description" content="Master Electricians in Calgary. Panel upgrades, generators and backup power, pot lights, repairs, hot tub and garage wiring. Quality and Long-Term Performance.">
+  <link rel="canonical" href="https://bestinc.ca/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Electrician","name":"Blue Electrical Services and Technology Inc.","alternateName":"BEST Inc.","url":"https://bestinc.ca","telephone":"+14034638407","email":"info@bestinc.ca","slogan":"Quality and Long-Term Performance.","image":"https://bestinc.ca/assets/logo/best-logo-primary.jpg","address":{"@type":"PostalAddress","streetAddress":"1844 76 Ave SE","addressLocality":"Calgary","addressRegion":"AB","postalCode":"T2C 1P7","addressCountry":"CA"},"areaServed":["Calgary","Airdrie","Chestermere","Cochrane","Okotoks","Rocky View County"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"16:30"}],"priceRange":"$$"}</script>
+  <style>
+    body { margin: 0; background: var(--neutral-0); }
+    a { color: var(--text-link); text-decoration: none; }
+    a:hover { color: var(--text-link-hover); text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-body); color: var(--text-primary); background: var(--neutral-0); min-height: 100vh; display: flex; flex-direction: column; padding-bottom: {{ pagePadBottom }}">
+
+  <!-- HEADER -->
+  <header style="position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow-sm)">
+    <div style="background: var(--neutral-900); padding: 9px 24px">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <a href="{{ telHref }}" style="display: flex; align-items: center; gap: 8px; font: var(--text-body-sm); font-weight: 600; color: var(--text-on-dark)" style-hover="color: var(--gold-500); text-decoration: none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          {{ phone }}
+        </a>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <span style="display: flex; align-items: center; gap: 8px; font: var(--text-body-sm); color: var(--text-on-dark-secondary)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            1844 76 Ave SE, Calgary
+          </span>
+        </sc-if>
+        <span style="font: var(--text-body-sm); color: var(--text-on-dark-secondary)">Done right the first time. Built to last.</span>
+      </div>
+    </div>
+    <div style="background: var(--neutral-0); border-bottom: 1px solid var(--border-subtle); padding: 12px 24px">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+        <a href="/" onClick="{{ go.home }}" aria-label="Blue Electrical home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary)" style-hover="text-decoration: none">
+          <img src="assets/logo/best-mark.png" alt="Blue Electrical Services and Technology Inc. logo" style="height: 58px; width: 58px; display: block; flex-shrink: 0">
+          <span style="font-family: var(--font-display); font-weight: 700; font-size: 19px; line-height: 1.15; letter-spacing: -0.01em; color: var(--text-primary); text-wrap: balance; max-width: 240px">Blue Electrical Services &amp; Technology</span>
+        </a>
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display: flex; align-items: center; gap: 26px">
+            <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
+              <a href="{{ n.href }}" onClick="{{ n.go }}" style="font: var(--text-body-sm); font-weight: 600; color: {{ n.color }}; text-decoration: none; white-space: nowrap; padding: 6px 0; border-bottom: 2px solid {{ n.rule }}" style-hover="color: var(--text-link); text-decoration: none">{{ n.label }}</a>
+            </sc-for>
+            <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="md" on-click="{{ go.contact }}" hint-size="160px,44px">Request a quote</x-import>
+          </nav>
+        </sc-if>
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" style="width: 44px; height: 44px; border: 1px solid var(--border-default); border-radius: var(--radius-sm); background: var(--neutral-0); display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-900)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+          </button>
+        </sc-if>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="background: var(--neutral-0); border-bottom: 1px solid var(--border-default); padding: 8px 24px 20px; display: flex; flex-direction: column; gap: 4px">
+        <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6">
+          <a href="{{ n.href }}" onClick="{{ n.go }}" style="font: var(--text-h4); font-size: var(--font-size-md); color: {{ n.color }}; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); text-decoration: none">{{ n.label }}</a>
+        </sc-for>
+        <div style="margin-top: 14px">
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" full-width="{{ true }}" on-click="{{ go.contact }}" hint-size="100%,52px">Request a quote</x-import>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ is.home }}" hint-placeholder-val="{{ true }}">
+    <main data-screen-label="Home" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900)">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: stretch">
+          <div style="padding: 64px 24px; display: flex; flex-direction: column; gap: 20px; justify-content: center">
+            <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">Calgary, Alberta</div>
+            <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); text-wrap: pretty; letter-spacing: var(--tracking-tight)">Power is the first thing you plan.</h1>
+            <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); text-wrap: pretty; max-width: 560px">Standby generators, battery backup, and off-grid wiring for Calgary homeowners who want the lights, heat, and fridge to keep running when the grid does not. Master Electricians on staff. 15+ years experience.</div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px">
+              <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" on-click="{{ go.contact }}" hint-size="190px,52px">Request a quote</x-import>
+              <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" variant="ghost" size="lg" dc-props="{{ heroGhostProps }}" on-click="{{ go.generators }}" hint-size="200px,52px">Backup power options</x-import>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--border-on-dark)">
+              <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); color: var(--text-on-dark)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Master Electricians on staff</span>
+              <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); color: var(--text-on-dark)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>$5M general liability</span>
+              <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); color: var(--text-on-dark)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>WCB #6852783</span>
+            </div>
+          </div>
+          <div style="position: relative; min-height: 380px; background: var(--neutral-800)">
+            <image-slot id="home-hero-photo" src="assets/photos/crew-service-conduit.jpg" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a generator or panel job photo"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">What we do</div>
+          <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">Services</h2>
+          <div style="font: var(--text-body-lg); color: var(--text-secondary); max-width: 620px; text-wrap: pretty">Residential and light-commercial electrical work in Calgary. Tap a service to see what it covers and what it costs.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+            <a href="{{ s.href }}" onClick="{{ s.go }}" style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 26px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard)" style-hover="border-color: var(--border-brand); transform: translateY(-2px); text-decoration: none">
+              <div style="position: relative; height: 160px; margin: -26px -26px 4px; width: calc(100% + 52px); border-radius: var(--radius-md) var(--radius-md) 0 0; overflow: hidden; background: var(--neutral-100)">
+                <image-slot id="service-photo-{{ s.id }}" src="{{ s.photo }}" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a {{ s.name }} photo"></image-slot>
+              </div>
+              <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 32px; line-height: 1; color: var(--gold-500)">{{ s.icon }}</span>
+              <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">{{ s.name }}</h3>
+              <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">{{ s.blurb }}</div>
+              <span style="font: var(--text-body-sm); font-weight: 600; color: var(--text-link); margin-top: auto; padding-top: 4px">What this covers</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">Recent work</div>
+          <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">From our job sites</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+          <sc-for list="{{ workPhotos }}" as="p" hint-placeholder-count="5">
+            <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px">
+              <div style="position: relative; aspect-ratio: 3 / 4; border-radius: var(--radius-md); overflow: hidden; background: var(--neutral-100)">
+                <image-slot id="{{ p.id }}" src="{{ p.src }}" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a job photo"></image-slot>
+              </div>
+              <figcaption style="font: var(--text-caption); color: var(--text-secondary)">{{ p.cap }}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">How a job runs</div>
+          <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">Three steps, simple progress</h2>
+        </div>
+        <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: var(--font-size-3xl); line-height: 1; color: var(--gold-500)">01</div>
+            <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">You call or send photos</h3>
+            <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">Tell us what the problem is. Photos of the panel help. Harold picks up and books the visit.</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: var(--font-size-3xl); line-height: 1; color: var(--gold-500)">02</div>
+            <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">We estimate the work</h3>
+            <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">You get a price and what it covers before anything starts. Free estimate to start, design quotes extra.</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: var(--font-size-3xl); line-height: 1; color: var(--gold-500)">03</div>
+            <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">We book it and do it</h3>
+            <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">The team does the work, pulls the permit, and cleans up after. Built for quality and long-term performance.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--neutral-50); margin-top: 72px; padding: 72px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">From customers</div>
+              <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">Reviews</h2>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+              <a href="/reviews" onClick="{{ go.reviews }}" style="font: var(--text-body-sm); font-weight: 600; color: var(--text-link)">Read all reviews</a>
+              <a href="https://maps.app.goo.gl/kjihY8b8yToA2VdT8" target="_blank" rel="noopener" style="font: var(--text-body-sm); font-weight: 600; color: var(--text-link)">See our Google reviews</a>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+            <sc-for list="{{ homeReviews }}" as="r" hint-placeholder-count="3">
+              <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+                <div style="display: flex; gap: 3px">
+                  <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                  <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                  <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                  <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                  <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                </div>
+                <div style="font: var(--text-body); color: var(--text-primary); text-wrap: pretty">{{ r.text }}</div>
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-subtle)">
+                  <div style="width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--blue-50); color: var(--blue-700); display: flex; align-items: center; justify-content: center; font: var(--text-caption); font-weight: 700">{{ r.initials }}</div>
+                  <div style="display: flex; flex-direction: column">
+                    <span style="font: var(--text-body-sm); font-weight: 600">{{ r.name }}</span>
+                    <span style="font: var(--text-caption); color: var(--text-tertiary)">{{ r.meta }}</span>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+            <div style="font: var(--text-caption); color: var(--gold-700); background: var(--gold-50); border: 1px solid var(--gold-200); border-radius: var(--radius-full); padding: 4px 12px; align-self: flex-start">Google and HomeStars reviews, verbatim. Names shortened to first name and last initial.</div>
+          </sc-if>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 72px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">Get a price</div>
+          <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary); text-wrap: pretty">Tell us what is going on</h2>
+          <div style="font: var(--text-body-lg); color: var(--text-secondary); text-wrap: pretty">A sentence or two on the problem is enough. Photos of the panel or the work area speed up the quote.</div>
+          <a href="{{ telHref }}" style="display: flex; align-items: center; gap: 12px; font: var(--text-h3); color: var(--text-primary)" style-hover="color: var(--text-link); text-decoration: none">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            {{ phone }}
+          </a>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; padding-top: 18px; border-top: 1px solid var(--border-subtle)">
+            <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Licensed electrical contractor</span>
+            <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>Calgary and area</span>
+            <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm); font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8H9v8"></path><path d="M3 10a2 2 0 0 1 .7-1.5l7-6a2 2 0 0 1 2.6 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Locally owned</span>
+          </div>
+        </div>
+        <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: 28px; display: flex; flex-direction: column; gap: 16px">
+          <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">Request a quote</h3>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="Name" placeholder="Your name" required="{{ true }}" value="{{ form.name }}" on-change="{{ form.setName }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="Phone" type="tel" placeholder="403 000 0000" required="{{ true }}" value="{{ form.phone }}" on-change="{{ form.setPhone }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Select" label="Type of work" options="{{ jobOptions }}" placeholder="Pick one" value="{{ form.job }}" on-change="{{ form.setJob }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="What is going on" placeholder="A sentence or two is enough" value="{{ form.notes }}" on-change="{{ form.setNotes }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Checkbox" label="Send me a text instead of a call. We will reach out to you." checked="{{ form.text }}" on-change="{{ form.setText }}" hint-size="100%,28px"></x-import>
+          <div style="margin-top: 4px">
+            <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" full-width="{{ true }}" on-click="{{ form.submit }}" disabled="{{ form.sending }}" hint-size="100%,52px">{{ form.btnLabel }}</x-import>
+          </div>
+          <sc-if value="{{ form.hasMsg }}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="font: var(--text-body-sm); font-weight: 600; color: {{ form.msgColor }}; text-wrap: pretty">{{ form.msg }}</div>
+          </sc-if>
+          <div style="font: var(--text-caption); color: var(--text-tertiary)">We reply within the hour during business hours. <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="color: var(--gold-700)">(Draft, confirm reply time.)</span></sc-if></div>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 72px auto 0; width: 100%; box-sizing: border-box; padding: 0 24px 72px">
+        <div style="background: var(--neutral-900); border-radius: var(--radius-md); padding: 40px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <h3 style="margin: 0; font: var(--text-h3); color: var(--text-on-dark); text-wrap: pretty">Planning a bunker, safe room, or off-grid property?</h3>
+            <div style="font: var(--text-body); color: var(--text-on-dark-secondary)">We wire them. Start with a call.</div>
+          </div>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" variant="gold" size="lg" on-click="{{ go.generators }}" hint-size="260px,56px">Backup power and off-grid</x-import>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ SERVICES OVERVIEW ============ -->
+  <sc-if value="{{ is.services }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Services" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">What we do</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Services</h1>
+          <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 620px; text-wrap: pretty">Residential and light-commercial electrical work in Calgary, done by Master Electricians. Every job is permitted and inspected.</div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 56px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+            <a href="{{ s.href }}" onClick="{{ s.go }}" style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 28px; display: flex; flex-direction: column; gap: 14px; text-decoration: none; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard)" style-hover="border-color: var(--border-brand); transform: translateY(-2px); text-decoration: none">
+              <div style="position: relative; height: 180px; margin: -28px -28px 4px; width: calc(100% + 56px); border-radius: var(--radius-md) var(--radius-md) 0 0; overflow: hidden; background: var(--neutral-100)">
+                <image-slot id="service-photo-{{ s.id }}" src="{{ s.photo }}" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a {{ s.name }} photo"></image-slot>
+              </div>
+              <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 36px; line-height: 1; color: var(--gold-500)">{{ s.icon }}</span>
+              <h3 style="margin: 0; font: var(--text-h3); color: var(--text-primary)">{{ s.name }}</h3>
+              <div style="font: var(--text-body); color: var(--text-secondary); text-wrap: pretty">{{ s.blurb }}</div>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px">
+                <sc-for list="{{ s.coversShort }}" as="c" hint-placeholder-count="3">
+                  <span style="display: flex; align-items: flex-start; gap: 10px; font: var(--text-body-sm); color: var(--text-primary)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg>{{ c.text }}</span>
+                </sc-for>
+              </div>
+              <span style="font: var(--text-body-sm); font-weight: 600; color: var(--text-link); margin-top: auto; padding-top: 8px">What this covers and costs</span>
+            </a>
+          </sc-for>
+        </div>
+        <div style="background: var(--neutral-50); border-radius: var(--radius-md); padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <h3 style="margin: 0; font: var(--text-h3); color: var(--text-primary)">Not sure which one you need?</h3>
+            <div style="font: var(--text-body); color: var(--text-secondary)">Call and describe the problem. Harold will point you the right way.</div>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap">
+            <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" on-click="{{ go.contact }}" hint-size="190px,52px">Request a quote</x-import>
+            <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" variant="ghost" size="lg" on-click="{{ go.faq }}" hint-size="150px,52px">Read the FAQ</x-import>
+          </div>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ SERVICE DETAIL ============ -->
+  <sc-if value="{{ is.service }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Service detail" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900)">
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))">
+          <div style="padding: 56px 24px; display: flex; flex-direction: column; gap: 18px; justify-content: center">
+            <a href="{{ servicesBackHref }}" onClick="{{ go.services }}" style="font: var(--text-body-sm); font-weight: 600; color: var(--gold-500)" style-hover="color: var(--gold-300); text-decoration: none">{{ servicesBackLabel }}</a>
+            <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 44px; line-height: 1; color: var(--gold-500)">{{ svc.icon }}</span>
+            <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight); text-wrap: pretty">{{ svc.h1 }}</h1>
+            <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 560px; text-wrap: pretty">{{ svc.lead }}</div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px">
+              <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" on-click="{{ go.contact }}" hint-size="190px,52px">Request a quote</x-import>
+              <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" variant="ghost" size="lg" dc-props="{{ heroGhostProps }}" href="{{ telHref }}" hint-size="150px,52px">Call the shop</x-import>
+            </div>
+          </div>
+          <div style="position: relative; min-height: 320px; background: var(--neutral-800)">
+            <image-slot id="service-photo-{{ svc.id }}" src="{{ svc.photo }}" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a {{ svc.name }} job photo"></image-slot>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 64px 24px 72px; display: flex; flex-direction: column; gap: 56px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start">
+          <div style="display: flex; flex-direction: column; gap: 18px">
+            <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-600)">What this covers</div>
+            <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary); text-wrap: pretty">{{ svc.coversTitle }}</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <sc-for list="{{ svc.covers }}" as="c" hint-placeholder-count="5">
+                <span style="display: flex; align-items: flex-start; gap: 12px; font: var(--text-body); color: var(--text-primary)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px"><path d="M20 6 9 17l-5-5"></path></svg>{{ c.text }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ svc.hasPrice }}" hint-placeholder-val="{{ true }}">
+            <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 28px; display: flex; flex-direction: column; gap: 18px">
+              <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">{{ svc.priceLabel }}</div>
+              <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+                <span style="font: var(--text-h1); font-size: var(--font-size-2xl); color: var(--text-primary)">{{ svc.priceLow }}</span>
+                <span style="font: var(--text-body); color: var(--text-tertiary)">to</span>
+                <span style="font: var(--text-h1); font-size: var(--font-size-2xl); color: var(--text-primary)">{{ svc.priceHigh }}</span>
+              </div>
+              <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">{{ svc.priceNote }}</div>
+              <div style="background: var(--surface-sunken); border-radius: var(--radius-sm); padding: 18px; display: flex; flex-direction: column; gap: 10px">
+                <div style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">Included in the range</div>
+                <sc-for list="{{ svc.priceIncludes }}" as="p" hint-placeholder-count="3">
+                  <span style="display: flex; align-items: center; gap: 10px; font: var(--text-body-sm)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>{{ p.text }}</span>
+                </sc-for>
+              </div>
+              <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="md" on-click="{{ go.contact }}" hint-size="160px,44px">Get an exact price</x-import>
+              <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+                <div style="font: var(--text-caption); color: var(--gold-700); background: var(--gold-50); border: 1px solid var(--gold-200); border-radius: var(--radius-full); padding: 4px 12px; align-self: flex-start">Draft pricing, confirm before publishing</div>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">Common questions</h2>
+          <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden">
+            <sc-for list="{{ svc.faqs }}" as="faq" hint-placeholder-count="3">
+              <div style="border-bottom: 1px solid var(--border-subtle)">
+                <button type="button" onClick="{{ faq.toggle }}" style="width: 100%; background: transparent; border: 0; border-left: 3px solid {{ faq.rule }}; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; text-align: left; font-family: var(--font-body)">
+                  <span style="font: var(--text-h4); font-size: var(--font-size-md); color: var(--text-primary)">{{ faq.q }}</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; transform: rotate({{ faq.rotate }}); transition: transform var(--duration-base) var(--ease-standard)"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+                <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding: 0 24px 22px 27px; font: var(--text-body); color: var(--text-secondary); max-width: 640px; text-wrap: pretty">{{ faq.a }}</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <h3 style="margin: 0; font: var(--text-h3); color: var(--text-primary)">Related work</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+            <sc-for list="{{ svc.related }}" as="s" hint-placeholder-count="3">
+              <a href="{{ s.href }}" onClick="{{ s.go }}" style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; display: flex; align-items: center; gap: 14px; text-decoration: none" style-hover="border-color: var(--border-brand); text-decoration: none">
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 26px; line-height: 1; color: var(--gold-500)">{{ s.icon }}</span>
+                <span style="font: var(--text-body); font-weight: 600; color: var(--text-primary)">{{ s.name }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ REVIEWS ============ -->
+  <sc-if value="{{ is.reviews }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Reviews" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">From customers</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Reviews</h1>
+          <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 620px; text-wrap: pretty">What Calgary homeowners and business owners say about working with us.</div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 28px">
+        <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+          <div style="font: var(--text-caption); color: var(--gold-700); background: var(--gold-50); border: 1px solid var(--gold-200); border-radius: var(--radius-full); padding: 4px 12px; align-self: flex-start">Google and HomeStars reviews, verbatim. Names shortened to first name and last initial.</div>
+        </sc-if>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+          <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="6">
+            <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 24px; display: flex; flex-direction: column; gap: 14px">
+              <div style="display: flex; gap: 3px">
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+                <span class="material-symbols-rounded" style="font-family: 'Material Symbols Rounded'; font-variation-settings: 'FILL' 1; font-size: 20px; line-height: 1; color: var(--gold-500)">star</span>
+              </div>
+              <div style="font: var(--text-body); color: var(--text-primary); text-wrap: pretty">{{ r.text }}</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-subtle)">
+                <div style="width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--blue-50); color: var(--blue-700); display: flex; align-items: center; justify-content: center; font: var(--text-caption); font-weight: 700">{{ r.initials }}</div>
+                <div style="display: flex; flex-direction: column">
+                  <span style="font: var(--text-body-sm); font-weight: 600">{{ r.name }}</span>
+                  <span style="font: var(--text-caption); color: var(--text-tertiary)">{{ r.meta }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background: var(--neutral-50); border-radius: var(--radius-md); padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 28px">
+          <h3 style="margin: 0; font: var(--text-h3); color: var(--text-primary)">Worked with us? Leave a review on Google.</h3>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" variant="ghost" size="lg" hint-size="180px,52px">Write a review</x-import>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ TEAM ============ -->
+  <sc-if value="{{ is.team }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Our team" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">Our company</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Our team</h1>
+          <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 620px; text-wrap: pretty">You talk to Harold. Andrew oversees the work.</div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 40px">
+        <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+          <div style="font: var(--text-caption); color: var(--gold-700); background: var(--gold-50); border: 1px solid var(--gold-200); border-radius: var(--radius-full); padding: 4px 12px; align-self: flex-start">Draft bios and stats. Replace with real details and photos.</div>
+        </sc-if>
+        <sc-for list="{{ team }}" as="m" hint-placeholder-count="2">
+          <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+            <div style="position: relative; min-height: 360px; background: var(--neutral-100)">
+              <image-slot id="team-{{ m.id }}" src="{{ m.photo }}" shape="rect" style="position: absolute; inset: 0; width: 100%; height: 100%" placeholder="Drop a photo of {{ m.name }}"></image-slot>
+            </div>
+            <div style="padding: 32px; display: flex; flex-direction: column; gap: 16px">
+              <div style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--gold-600)">{{ m.role }}</div>
+              <h2 style="margin: 0; font: var(--text-h2); color: var(--text-primary)">{{ m.name }}</h2>
+              <div style="font: var(--text-body); color: var(--text-secondary); text-wrap: pretty">{{ m.bio }}</div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--border-subtle)">
+                <sc-for list="{{ m.stats }}" as="st" hint-placeholder-count="6">
+                  <div style="display: flex; flex-direction: column; gap: 3px">
+                    <span style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">{{ st.k }}</span>
+                    <span style="font: var(--text-body); font-weight: 600; color: var(--text-primary)">{{ st.v }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ SERVICE AREAS ============ -->
+  <sc-if value="{{ is.areas }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Service areas" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">Where we work</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Service areas</h1>
+          <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 620px; text-wrap: pretty">Calgary and the surrounding area. The shop is at 1844 76 Ave SE. Tap a community to read reviews from that area.</div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 32px">
+        <div style="position: relative; width: 100%; height: 300px; border-radius: var(--radius-md); overflow: hidden; background: var(--neutral-100)">
+          <iframe title="Map of Calgary and area served by Blue Electrical" src="https://www.google.com/maps?q=Calgary,+AB&amp;z=9&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe>
+        </div>
+        <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+          <div style="font: var(--text-caption); color: var(--gold-700); background: var(--gold-50); border: 1px solid var(--gold-200); border-radius: var(--radius-full); padding: 4px 12px; align-self: flex-start">Draft list, confirm communities before publishing</div>
+        </sc-if>
+        <sc-for list="{{ areaGroups }}" as="group" hint-placeholder-count="5">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="display: flex; align-items: baseline; gap: 10px">
+              <span style="font: var(--text-h4); color: var(--text-primary)">{{ group.name }}</span>
+              <span style="font: var(--text-caption); color: var(--text-tertiary)">{{ group.count }}</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <sc-for list="{{ group.places }}" as="place" hint-placeholder-count="10">
+                <a href="/reviews" onClick="{{ go.reviews }}" style="font: var(--text-body-sm); background: var(--surface-sunken); border: 1px solid var(--border-default); border-radius: var(--radius-full); padding: 8px 16px; color: var(--text-primary); text-decoration: none; transition: border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color: var(--border-gold); color: var(--text-link); text-decoration: none">{{ place.name }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ FAQ ============ -->
+  <sc-if value="{{ is.faq }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="FAQ" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">Good to know</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Questions we get asked</h1>
+        </div>
+      </div>
+      <div style="max-width: 860px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: flex; flex-direction: column; gap: 32px">
+        <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden">
+          <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="8">
+            <div style="border-bottom: 1px solid var(--border-subtle)">
+              <button type="button" onClick="{{ faq.toggle }}" style="width: 100%; background: transparent; border: 0; border-left: 3px solid {{ faq.rule }}; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; text-align: left; font-family: var(--font-body)">
+                <span style="font: var(--text-h4); font-size: var(--font-size-md); color: var(--text-primary)">{{ faq.q }}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; transform: rotate({{ faq.rotate }}); transition: transform var(--duration-base) var(--ease-standard)"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+                <div style="padding: 0 24px 22px 27px; font: var(--text-body); color: var(--text-secondary); max-width: 640px; text-wrap: pretty">{{ faq.a }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+          <div style="font: var(--text-body-lg); color: var(--text-secondary)">Still have a question? Call the shop.</div>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" on-click="{{ go.contact }}" hint-size="150px,52px">Contact us</x-import>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- ============ CONTACT ============ -->
+  <sc-if value="{{ is.contact }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Contact" style="display: flex; flex-direction: column">
+      <div style="background: var(--neutral-900); padding: 56px 24px">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+          <div style="font: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--gold-500)">Get in touch</div>
+          <h1 style="margin: 0; font: var(--text-display-2); color: var(--text-on-dark); letter-spacing: var(--tracking-tight)">Request a quote</h1>
+          <div style="font: var(--text-body-lg); color: var(--text-on-dark-secondary); max-width: 620px; text-wrap: pretty">Call, text, or send the form. Photos of the panel or the work area speed up the quote.</div>
+        </div>
+      </div>
+      <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box; padding: 56px 24px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start">
+        <div style="background: var(--neutral-0); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: 28px; display: flex; flex-direction: column; gap: 16px">
+          <h3 style="margin: 0; font: var(--text-h4); color: var(--text-primary)">Tell us what is going on</h3>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="Name" placeholder="Your name" required="{{ true }}" value="{{ form.name }}" on-change="{{ form.setName }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="Phone" type="tel" placeholder="403 000 0000" required="{{ true }}" value="{{ form.phone }}" on-change="{{ form.setPhone }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Select" label="Type of work" options="{{ jobOptions }}" placeholder="Pick one" value="{{ form.job }}" on-change="{{ form.setJob }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Input" label="What is going on" placeholder="A sentence or two is enough" value="{{ form.notes }}" on-change="{{ form.setNotes }}" hint-size="100%,72px"></x-import>
+          <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Checkbox" label="Send me a text instead of a call. We will reach out to you." checked="{{ form.text }}" on-change="{{ form.setText }}" hint-size="100%,28px"></x-import>
+          <div style="margin-top: 4px">
+            <x-import component-from-global-scope="BlueElectricalDesignSystem_b25a0d.Button" size="lg" full-width="{{ true }}" on-click="{{ form.submit }}" disabled="{{ form.sending }}" hint-size="100%,52px">{{ form.btnLabel }}</x-import>
+          </div>
+          <sc-if value="{{ form.hasMsg }}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="font: var(--text-body-sm); font-weight: 600; color: {{ form.msgColor }}; text-wrap: pretty">{{ form.msg }}</div>
+          </sc-if>
+          <div style="font: var(--text-caption); color: var(--text-tertiary)">We reply within the hour during business hours. <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="color: var(--gold-700)">(Draft, confirm reply time.)</span></sc-if></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 28px">
+          <div style="display: flex; flex-direction: column; gap: 18px">
+            <a href="{{ telHref }}" style="display: flex; align-items: center; gap: 14px; color: var(--text-primary)" style-hover="color: var(--text-link); text-decoration: none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span style="display: flex; flex-direction: column"><span style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">Call or text</span><span style="font: var(--text-h3)">{{ phone }}</span></span>
+            </a>
+            <a href="mailto:info@bestinc.ca" style="display: flex; align-items: center; gap: 14px; color: var(--text-primary)" style-hover="color: var(--text-link); text-decoration: none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span style="display: flex; flex-direction: column"><span style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">Email</span><span style="font: var(--text-h4)">info@bestinc.ca</span></span>
+            </a>
+            <span style="display: flex; align-items: center; gap: 14px; color: var(--text-primary)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span style="display: flex; flex-direction: column"><span style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">Shop</span><span style="font: var(--text-h4)">1844 76 Ave SE, Calgary, AB T2C 1P7</span></span>
+            </span>
+          </div>
+          <div style="background: var(--neutral-50); border-radius: var(--radius-md); padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+              <span style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-tertiary)">Hours</span>
+              <span style="font: var(--text-caption); color: var(--text-tertiary)">Now in Calgary: <span style="font-variant-numeric: tabular-nums; color: var(--text-primary); font-weight: 600">{{ clock }}</span></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; font: var(--text-body-sm)"><span>Monday to Friday</span><span style="font-weight: 600">7 am to 4:30 pm</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; font: var(--text-body-sm)"><span>Saturday</span><span style="font-weight: 600">By appointment</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px; font: var(--text-body-sm)"><span>Sunday</span><span style="font-weight: 600">Closed</span></div>
+            <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
+              <div style="font: var(--text-caption); color: var(--gold-700)">Draft hours, confirm before publishing.</div>
+            </sc-if>
+          </div>
+          <div style="background: var(--feedback-danger-bg); border-radius: var(--radius-md); padding: 20px 24px; display: flex; align-items: flex-start; gap: 14px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--feedback-danger-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font: var(--text-h4); color: var(--feedback-danger-text)">Emergency service available</h3>
+              <div style="font: var(--text-body-sm); color: var(--text-secondary); text-wrap: pretty">Burning smell, sparking, or a panel that is hot to the touch: shut the main off and call. Response hours to be confirmed.</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <!-- FLOATING HOURS TAB -->
+  <a href="{{ telHref }}" aria-label="Call Blue Electrical: {{ hours.status }}" style="position: fixed; right: 16px; bottom: {{ hours.bottom }}; z-index: 55; max-width: calc(100% - 32px); box-sizing: border-box; display: flex; align-items: center; gap: 14px; padding: 10px 10px 10px 12px; background: var(--neutral-900); border: 1px solid var(--border-on-dark); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); text-decoration: none; transition: transform 160ms ease" style-hover="transform: translateY(-2px); text-decoration: none">
+    <span style="flex: none; width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--neutral-0); display: flex; align-items: center; justify-content: center">
+      <img src="assets/logo/best-mark.png" alt="" style="width: 32px; height: 32px; display: block">
+    </span>
+    <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+      <span style="display: flex; align-items: center; gap: 7px; font: var(--text-caption); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: {{ hours.color }}">
+        <span style="flex: none; width: 8px; height: 8px; border-radius: 50%; background: {{ hours.color }}; box-shadow: 0 0 0 3px {{ hours.ring }}"></span>
+        {{ hours.status }}
+      </span>
+      <span style="font: var(--text-h4); color: var(--text-on-dark); white-space: nowrap">{{ phone }}</span>
+      <span style="font: var(--text-caption); color: var(--neutral-300)">{{ hours.detail }}</span>
+    </span>
+    <span style="flex: none; width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--gold-500); display: flex; align-items: center; justify-content: center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-900)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--neutral-900); margin-top: auto">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="background: var(--neutral-0); border-radius: var(--radius-sm); padding: 10px 14px; align-self: flex-start">
+          <img src="assets/logo/best-logo-trimmed.png" alt="Blue Electrical Services and Technology Inc. logo" style="height: 64px; width: auto; max-width: 100%; display: block">
+        </div>
+        <div style="font: var(--text-body-sm); color: var(--text-on-dark-secondary); text-wrap: pretty">Blue Electrical Services and Technology Inc. Licensed electrical contractor in Calgary, Alberta. Master Electricians on staff. 15+ years experience.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--gold-500)">Services</div>
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <a href="{{ s.href }}" onClick="{{ s.go }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">{{ s.name }}</a>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--gold-500)">Company</div>
+        <a href="/team" onClick="{{ go.team }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">Our team</a>
+        <a href="/reviews" onClick="{{ go.reviews }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">Reviews</a>
+        <a href="/service-areas" onClick="{{ go.areas }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">Service areas</a>
+        <a href="/faq" onClick="{{ go.faq }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">FAQ</a>
+        <a href="/contact" onClick="{{ go.contact }}" style="font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">Contact</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font: var(--text-caption); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--gold-500)">Contact</div>
+        <a href="{{ telHref }}" style="display: flex; align-items: center; gap: 8px; font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          {{ phone }}
+        </a>
+        <a href="mailto:info@bestinc.ca" style="display: flex; align-items: center; gap: 8px; font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          info@bestinc.ca
+        </a>
+        <span style="display: flex; align-items: flex-start; gap: 8px; font: var(--text-body-sm); color: var(--neutral-300)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          1844 76 Ave SE, Calgary, AB T2C 1P7
+        </span>
+        <a href="https://www.instagram.com/blue.electrical.yyc/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; font: var(--text-body-sm); color: var(--neutral-300); text-decoration: none" style-hover="color: var(--neutral-0); text-decoration: none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--border-on-dark)">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font: var(--text-caption); color: var(--text-tertiary)">
+        <span>Blue Electrical Services and Technology Inc. · WCB #6852783 · $5M general liability</span>
+        <span>bestinc.ca</span>
+      </div>
+    </div>
+  </footer>
+  <div aria-hidden="true" style="height: 104px; background: var(--neutral-900)"></div>
+
+  <!-- STICKY MOBILE CTA -->
+  <sc-if value="{{ isPhone }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--neutral-0); border-top: 1px solid var(--border-default); box-shadow: 0 -6px 16px rgba(14,16,19,0.10); padding: 12px 16px 16px; display: flex; gap: 12px">
+      <a href="{{ telHref }}" style="flex: 1; height: 52px; border-radius: var(--radius-sm); background: var(--action-primary-bg); color: var(--action-primary-text); display: flex; align-items: center; justify-content: center; gap: 8px; font: var(--text-button); text-decoration: none" style-hover="background: var(--action-primary-bg-hover); text-decoration: none">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call now
+      </a>
+      <a href="/contact" onClick="{{ go.contact }}" style="flex: 1; height: 52px; border-radius: var(--radius-sm); background: var(--neutral-0); border: 1px solid var(--action-ghost-border); color: var(--text-primary); display: flex; align-items: center; justify-content: center; font: var(--text-button); text-decoration: none" style-hover="border-color: var(--action-ghost-border-hover); text-decoration: none">Get a quote</a>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;blue&quot;,&quot;gold&quot;],&quot;default&quot;:&quot;blue&quot;,&quot;tsType&quot;:&quot;'blue' | 'gold'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;showServicesPage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Pages&quot;},&quot;showDraft&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;phone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;403.463.8407&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = { route: 'home', serviceId: 'panel', openFaq: 0, menuOpen: false, now: new Date(), width: typeof window !== 'undefined' ? window.innerWidth : 1200, form: { name: '', phone: '', job: '', notes: '', text: false } };
+
+  componentDidMount() {
+    this._tick = setInterval(() => this.setState({ now: new Date() }), 1000);
+    this._resize = () => this.setState({ width: window.innerWidth });
+    window.addEventListener('resize', this._resize);
+    this.applyTheme();
+    this.applySeo();
+  }
+  componentDidUpdate() { this.applyTheme(); this.applySeo(); }
+
+  applySeo() {
+    const t = this._seoTitle, d = this._seoDesc;
+    if (!t || t === this._lastTitle) return;
+    this._lastTitle = t;
+    document.title = t;
+    let m = document.querySelector('meta[name="description"]');
+    if (!m) { m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
+    m.content = d;
+  }
+  componentWillUnmount() { clearInterval(this._tick); window.removeEventListener('resize', this._resize); }
+
+  applyTheme() {
+    const gold = (this.props.theme ?? 'blue') === 'gold';
+    const r = document.documentElement.style;
+    if (this._appliedGold === gold) return;
+    this._appliedGold = gold;
+    r.setProperty('--action-primary-bg', gold ? 'var(--gold-500)' : 'var(--blue-600)');
+    r.setProperty('--action-primary-bg-hover', gold ? 'var(--gold-600)' : 'var(--blue-700)');
+    r.setProperty('--action-primary-bg-active', gold ? 'var(--gold-700)' : 'var(--blue-800)');
+    r.setProperty('--action-primary-text', gold ? 'var(--neutral-900)' : 'var(--neutral-0)');
+  }
+
+  nav(route, serviceId) {
+    return e => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState(s => ({ route, serviceId: serviceId ?? s.serviceId, openFaq: 0, menuOpen: false }));
+      window.scrollTo(0, 0);
+    };
+  }
+  setField(k, v) { this.setState(s => ({ form: { ...s.form, [k]: v } })); }
+
+  async submitQuote(svcData) {
+    const f = this.state.form;
+    if (this.state.sendStatus === 'sending') return;
+    if (!f.name.trim() || !f.phone.trim()) {
+      this.setState({ sendStatus: 'error', sendMsg: 'Please add your name and phone number.' });
+      return;
+    }
+    this.setState({ sendStatus: 'sending', sendMsg: '' });
+    const job = (svcData.find(s => s.id === f.job) || {}).name || (f.job === 'other' ? 'Something else' : 'Not specified');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: 'aa3118e3-8d01-42bf-82aa-fe6756861d80',
+          subject: 'New quote request: ' + job + ' (' + f.name + ')',
+          from_name: 'bestinc.ca quote form',
+          Name: f.name, Phone: f.phone, 'Type of work': job,
+          'What is going on': f.notes || '(none)',
+          'Contact preference': f.text ? 'Text message' : 'Phone call',
+          botcheck: ''
+        })
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+      this.setState({ sendStatus: 'sent', sendMsg: 'Thanks, your request was sent. We will be in touch soon.', form: { name: '', phone: '', job: '', notes: '', text: false } });
+    } catch (e) {
+      this.setState({ sendStatus: 'error', sendMsg: 'That did not go through. Please call us instead.' });
+    }
+  }
+
+  hoursInfo() {
+    const H = { 1: [420, 990], 2: [420, 990], 3: [420, 990], 4: [420, 990], 5: [420, 990], 6: [540, 870] };
+    const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let day, mins;
+    try {
+      const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Edmonton', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(this.state.now).map(x => [x.type, x.value]));
+      day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+      mins = (+p.hour % 24) * 60 + +p.minute;
+    } catch (e) { day = this.state.now.getDay(); mins = this.state.now.getHours() * 60 + this.state.now.getMinutes(); }
+    const fmt = m => { const hr = Math.floor(m / 60), mn = m % 60, h12 = ((hr + 11) % 12) + 1; return h12 + (mn ? ':' + String(mn).padStart(2, '0') : '') + (hr < 12 ? ' a.m.' : ' p.m.'); };
+    const today = H[day];
+    if (today && mins >= today[0] && mins < today[1]) {
+      const soon = today[1] - mins <= 30;
+      return { open: true, status: soon ? 'Closing soon' : 'Open now', detail: 'Service hours until ' + fmt(today[1]), color: soon ? 'var(--gold-500)' : '#3fbf6e', ring: soon ? 'rgba(212,166,40,0.25)' : 'rgba(63,191,110,0.25)' };
+    }
+    let label;
+    if (today && mins < today[0]) label = 'Opens today at ' + fmt(today[0]);
+    else {
+      for (let i = 1; i <= 7; i++) { const d = (day + i) % 7; if (H[d]) { label = 'Opens ' + (i === 1 ? 'tomorrow' : names[d]) + ' at ' + fmt(H[d][0]); break; } }
+    }
+    return { open: false, status: 'Closed now', detail: label + '. Leave a message.', color: 'var(--neutral-400)', ring: 'rgba(160,166,175,0.2)' };
+  }
+
+  renderVals() {
+    const phone = this.props.phone ?? '403.463.8407';
+    const showDraft = this.props.showDraft ?? true;
+    const isMobile = this.state.width < 1080;
+    const showServices = this.props.showServicesPage ?? false;
+    const route = (this.state.route === 'services' && !showServices) ? 'home' : this.state.route;
+    const go = {
+      home: this.nav('home'), services: this.nav(showServices ? 'services' : 'home'), reviews: this.nav('reviews'), team: this.nav('team'),
+      areas: this.nav('areas'), faq: this.nav('faq'), contact: this.nav('contact'), generators: this.nav('service', 'generators')
+    };
+    const navDefs = [['Services', 'services', ['services', 'service'], '/services'], ['Reviews', 'reviews', ['reviews'], '/reviews'], ['Our team', 'team', ['team'], '/team'], ['Service areas', 'areas', ['areas'], '/service-areas'], ['FAQ', 'faq', ['faq'], '/faq'], ['Contact', 'contact', ['contact'], '/contact']];
+    const navItems = navDefs.filter(([, key]) => key !== 'services' || showServices).map(([label, key, active, href]) => ({
+      label, href, go: go[key],
+      color: active.includes(route) ? 'var(--text-link)' : 'var(--text-primary)',
+      rule: active.includes(route) ? 'var(--gold-500)' : 'transparent'
+    }));
+
+    const svcData = [
+      { id: 'panel', name: 'Panel Upgrades', icon: 'bolt', blurb: 'Replacing the main panel and breakers, and adding capacity for new circuits.',
+        lead: 'A 60 or 100 amp panel was built for a house without an EV, a hot tub, or a heat pump. We replace it with a 200 amp panel, permit it, and get it inspected.',
+        coversTitle: 'From the meter to the last breaker',
+        covers: ['100 amp to 200 amp service upgrades', 'Replacing Federal Pacific, Sylvania, and other recalled panels', 'Breaker and sub-panel additions for garages and suites', 'Permit, inspection, and ENMAX disconnect coordination', 'Whole-home surge protection at the panel'],
+        price: ['Panel upgrade', '$500', '$1,000', 'Where a job lands in the range depends on panel size, the state of the service entry, and access to the work.', ['Labour', 'Wiring', 'Panel']],
+        faqs: [['How long does a panel upgrade take?', 'Most residential upgrades are one day. Power is off for four to six hours while the panel is swapped.'], ['Do I need a permit?', 'Yes. We pull the permit and book the inspection. The cost is included in the quote.'], ['Will my insurance care?', 'Often. Insurers ask about Federal Pacific and 60 amp panels. An upgrade closes that question.']],
+        related: ['generators', 'hottub', 'repairs'] },
+      { id: 'generators', name: 'Generators & Backup Power', icon: 'power', blurb: 'Standby generators, transfer switches, and battery backup so the house keeps running when the grid does not.',
+        lead: 'Heat, refrigeration, communications, lighting. Everything in a disaster scenario runs on electricity first. We wire emergency shelters, safe rooms, and off-grid properties for Calgary homeowners who understand that.',
+        coversTitle: 'Power that does not depend on the grid',
+        covers: ['Standby generator installation and automatic transfer switches', 'Portable generator inlets and manual transfer switches', 'Battery backup and inverter systems', 'Safe-room, bunker, and emergency-shelter wiring', 'Off-grid and acreage power design'],
+        price: ['Portable generator inlet with manual transfer switch', '$1,200', '$2,500', 'Standby generator systems are quoted per job. A $94.95 Design Quote covers the site visit and load calculation.', ['Labour', 'Transfer switch', 'Inlet and wiring']],
+        faqs: [['Standby or portable?', 'Standby starts on its own and runs the whole house. Portable is cheaper and covers the essentials if you are home to start it. We size either to your load.'], ['How big a generator do I need?', 'It depends on what has to stay on. Furnace, fridge, sump, and a few circuits is usually 7 to 10 kW. Whole house is more. The Design Quote works this out.'], ['Do you do off-grid properties?', 'Yes. Acreages, cabins, and shelters outside the city are a growing part of the work.']],
+        related: ['panel', 'commercial', 'repairs'] },
+      { id: 'led', name: 'LED & Pot Light Installation', icon: 'lightbulb', blurb: 'Pot lights, under-cabinet LED, and dimmers in kitchens, basements, and living rooms.',
+        lead: 'Layouts planned before the first hole is cut, so the room is lit evenly and the switching makes sense.',
+        coversTitle: 'Layout, wiring, and finish',
+        covers: ['Recessed pot lights in new and finished ceilings', 'Under-cabinet and toe-kick LED strip', 'Dimmers and smart switches', 'Exterior soffit and landscape lighting', 'Replacing fluorescent fixtures with LED'],
+        price: ['Pot lights, per light installed', '$95', '$150', 'Range depends on ceiling access, dimmer selection, and how many circuits need to be added.', ['Labour', 'Fixture', 'Wiring']],
+        faqs: [['How many pot lights does my kitchen need?', 'A typical 12 by 12 kitchen takes six to eight 4 inch lights plus under-cabinet strip. We lay it out with you before cutting.'], ['Can you install in a finished ceiling?', 'Yes. Remodel housings go in without opening the ceiling. Wiring runs through the attic or joist space.']],
+        related: ['repairs', 'panel', 'hottub'] },
+      { id: 'repairs', name: 'Repairs & Troubleshooting', icon: 'build', blurb: 'Tracing dead circuits, tripping breakers, and faults behind the wall.',
+        lead: 'A breaker that keeps tripping is telling you something. We find the fault, fix it, and tell you what caused it.',
+        coversTitle: 'Find it, fix it, explain it',
+        covers: ['Tripping breakers and dead outlets', 'Flickering lights and buzzing panels', 'Aluminum wiring inspection and remediation', 'GFCI and AFCI protection where code requires it', 'Pre-sale and insurance electrical inspections'],
+        price: ['Service call', '$285', '$285', 'Three-hour minimum service call at Master Electrician rates. Most repairs finish inside it. Parts extra.', ['Up to 3 hours labour', 'Diagnosis', 'Written findings']],
+        faqs: [['What is the three-hour minimum?', 'Every service call is booked for three hours. Most troubleshooting and repair finishes inside that window with the fix done.'], ['My house has aluminum wiring. Is that a problem?', 'Not always, but connections need to be checked and often re-terminated. We inspect and quote the remediation.']],
+        related: ['panel', 'led', 'commercial'] },
+      { id: 'commercial', name: 'Commercial', icon: 'apartment', blurb: 'Light-commercial wiring, tenant improvements, and maintenance for shops and offices.',
+        lead: 'Tenant fit-outs, shop power, and ongoing maintenance for small commercial spaces in Calgary. Club Blue 22 members get scheduled visits and 22% off Master Electrician rates.',
+        coversTitle: 'Fit-outs and keeping the lights on',
+        covers: ['Tenant improvements and office fit-outs', 'Three-phase machine and shop power', 'Lighting retrofits and emergency lighting', 'Club Blue 22 maintenance agreements', 'Code corrections from fire and safety inspections'],
+        price: null,
+        faqs: [['What is Club Blue 22?', 'A 22-month maintenance agreement: scheduled visits, priority service, and 22% off Master Electrician rates.'], ['Do you work after hours?', 'Yes, for commercial clients where the work cannot happen during business hours. Quoted per job.']],
+        related: ['generators', 'repairs', 'led'] },
+      { id: 'hottub', name: 'Hot Tub & Garage Wiring', icon: 'garage', blurb: 'Dedicated circuits for hot tubs, EV chargers, welders, and detached garages.',
+        lead: 'Heavy loads need their own circuit, the right breaker, and often a sub-panel. We run it properly so it passes inspection and does not trip.',
+        coversTitle: 'Dedicated circuits for heavy loads',
+        covers: ['Hot tub and swim spa GFCI circuits', 'Detached garage feeds and sub-panels', 'EV charger circuits and 14-50 receptacles', 'Welder and compressor circuits', 'Heated driveway and exterior receptacles'],
+        price: ['Hot tub circuit', '$650', '$1,400', 'Range depends on distance from the panel, trenching or conduit needs, and whether the panel has room.', ['Labour', 'GFCI breaker and disconnect', 'Wiring']],
+        faqs: [['Does my panel have room for a hot tub?', 'Usually a 60 amp two-pole breaker. If the panel is full or under 100 amps, it may need an upgrade first. We check before quoting.'], ['Can you trench to the garage?', 'Yes. We trench and run conduit or direct-burial cable, then set a sub-panel in the garage.']],
+        related: ['panel', 'led', 'generators'] }
+    ];
+    const svcPhotos = {"panel":"panel-interior","generators":"outdoor-panel","led":"alcove-light","repairs":"tidy-wiring","commercial":"pub-lighting","hottub":"outdoor-post-outlet"};
+    svcData.forEach(s => { s.photo = 'assets/photos/' + svcPhotos[s.id] + '.jpg'; });
+    const byId = Object.fromEntries(svcData.map(s => [s.id, s]));
+    const slug = s => s.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const svcLite = s => ({ id: s.id, photo: s.photo, name: s.name, icon: s.icon, blurb: s.blurb, href: '/services/' + slug(s.name), coversShort: s.covers.slice(0, 3).map(t => ({ text: t })), go: this.nav('service', s.id) });
+    const services = svcData.map(svcLite);
+    const cur = byId[this.state.serviceId] || svcData[0];
+    const mkFaqs = list => list.map(([q, a], i) => ({
+      q, a, open: this.state.openFaq === i,
+      rotate: this.state.openFaq === i ? '180deg' : '0deg',
+      rule: this.state.openFaq === i ? 'var(--gold-500)' : 'transparent',
+      toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i }))
+    }));
+    const svc = {
+      id: cur.id, photo: cur.photo, name: cur.name, h1: cur.name + ' in Calgary', icon: cur.icon, lead: cur.lead, coversTitle: cur.coversTitle,
+      covers: cur.covers.map(t => ({ text: t })),
+      hasPrice: !!cur.price,
+      priceLabel: cur.price ? cur.price[0] : '', priceLow: cur.price ? cur.price[1] : '', priceHigh: cur.price ? cur.price[2] : '',
+      priceNote: cur.price ? cur.price[3] : '', priceIncludes: cur.price ? cur.price[4].map(t => ({ text: t })) : [],
+      faqs: mkFaqs(cur.faqs),
+      related: cur.related.map(id => svcLite(byId[id]))
+    };
+
+    const reviewData = [
+      ['Hana N.', 'Panel replacement · Google', 'We nedded to replace a 50 year old panel that looked like an octopus had taken it over. Blue Electrical had been recommended to us by a friend and it has been the best service I have ever had. Very professional, friendly, took the time to explain everything in plain english, showed up on time and cleaned up everything afterwards. Now thats what I call a gold star service! Thank you Andrew and to your team for accomodating our needs during the install. Very much appreciated!'],
+      ['Justin B.', 'Repeat customer · Google', 'These guys know their stuff. Very knowledgeable and efficient. We have been using Blue Electrical for over a year. We have never needed to call for warranty work cause the work have always been done right the first time. Andrew and Chris are the best at what they do and I would highly recommend them for any job big or small. Thanks so much guys!'],
+      ['Young Sung K.', 'Google', 'Andrew and the crew(Chris, Roman) were extremely professional throughout the entire process. The communication was excellent from start to finish. When unexpected issue arose, Andrew stayed fully focused on resolving it properly and made sure everything was completed to our satisfaction. Workmanship and commitment to quality were impressive.'],
+      ['Tony L.', 'Kitchen lighting reno · Google', 'Andrew and his team are top notch professionals, with an attention to detail and demonstrates pride in their work. They kept the work area clean and took care to minimize disruptions. As they worked, they checked in at appropriate times to make sure the end result of the kitchen lighting reno was going to match what our vision was. Would recommend to anyone wanting a nice polished end product.'],
+      ['Jeremy S.', 'Light fixtures, outlets and switches · Google', 'Working with Andrew and the crew at Blue Electrical was a great experience! Friendly and professional. I needed some help improving lighting in an open space and I was given some really creative and enthusiastic options. I\'m very happy with the work done, including a creative LED lighting solution that both fixed the problem, while also creating a cool architectural lighting feature.'],
+      ['Informed Home Inspections', 'Panel installation · Google', 'Andrew was great to work with! He came out and did a pre-assessment of the panel and work that needed to be done. When we went ahead with the job he went the extra mile by installing a new plywood backing and vapour barrier in behind the panel to tie into when we finish the basement. Pride in workmanship and details like that set Blue Electrical apart. Highly recommend!'],
+      ['Sanjeev S.', 'Exterior LED trim lighting · Google', 'Recently contracted Blue Electrical for exterior electrical work at my home and the crew as well as the owner were very professional and punctual. Andrew L. (company owner) took time to explain his crew the work scope, safety requirements and expectations. The work site was cleaned on daily basis and the final install was impeccable, far better than I envisioned. It\'s great to see there are people who take pride in what they do and deliver exceptional service at reasonable cost!'],
+      ['Carla M.', 'Outdoor outlet · Google', 'Andrew had done some excellent electrical work for me several years ago so he immediately came to mind when I had an outdoor outlet with no current. This socket supplied all the landscape lighting so was important to me to have it restored. Andrew replied quickly to my message and took the time to trouble shoot over the phone to the point that the problem was resolved without him even having to do a service call. He could have certainly scheduled a visit and charged accordingly just to quickly fix it himself, but I was extremely impressed that he chose to go the route of integrity and thus save me the expense. I highly recommend Andrew at Blue Electrical!'],
+      ['Suzanne L.', 'Property management · HomeStars', 'My company has been working with Blue Electrical Services for a while now, and we can\'t recommend them highly enough. It\'s very important to us, as property managers, that the service companies we hire represent us well with our clients, and Andrew and his team excel at that.'],
+      ['Mrs. Ritz', 'Kitchen and living room lighting · HomeStars', 'We have used Andrew and Andrew’s crewmen for many projects over the years. They always go above and beyond, are more than fair in pricing and always ensure that we are satisfied with the work done before they leave. I feel safe and confident having them in my home even if I am not home and have never been disappointed with the work done. They are flexible around children and pets and rescheduling if needed which means a lot to me as a mom.'],
+      ['Aidan W.', 'Bathroom fan install · HomeStars', 'Andrew and his team were outstanding! They were all very personable and likeable, and they worked efficiently and professionally to install a bathroom fan in my main floor bathroom. This also included rewiring and improving the electrical, as well as venting the fan out side of my house. I\'m extremely happy with the results, and would hire them again in an instant! Also, I should point out that after they were finished, they made sure the bathroom was spotless. Extremely impressed! Thank you!'],
+      ['Customer', 'Hot tub electrical · HomeStars', 'Relocated my hot tub and needed electrical hooked up. The technician was very professional, friendly, and efficient. He completed the project on time and on budget. Hot tub now works great!']
+    ];
+    const reviews = reviewData.map(([name, meta, text]) => ({ name, meta, text, initials: name.replace('Mrs. ', '').split(' ').map(w => w[0]).join('').slice(0, 2) }));
+
+    const team = [
+      { id: 'andrew', photo: 'assets/photos/andrew-chandelier-install.jpg', name: 'Andrew', role: 'Owner and Master Electrician', bio: 'Andrew has 32 years in the trade, and he is still learning things today! He started Blue Electrical after years of residential and commercial work across Calgary. He oversees every job, makes sure every permit is pulled, and is the one who answers when something goes wrong. The disaster-preparedness side of the business, generators and off-grid power, grew out of his own interest in it.',
+        stats: [['Years in trade', '32'], ['Licence', 'Master Electrician'], ['Specialty', 'Panels and backup power'], ['Vehicle', 'White Van'], ['Based in', 'Southeast Calgary'], ['Off the clock', 'Draft: fun fact here']] },
+      { id: 'harold', photo: 'assets/photos/heat-reflective-blinds.jpg', name: 'Harold', role: 'Office and dispatch', bio: 'Harold runs the office. He picks up the phone, books the visits, keeps the schedule honest, and sends the quotes out. If you have called the shop, you have talked to Harold.',
+        stats: [['Customer Service Experience', 'Over 20 years'], ['Role', 'Administration and Sun Control'], ['Specialty', 'Getting you a call back within the hour'], ['Based in', 'Calgary'], ['Reach him', phone], ['Off the clock', 'Dance to Vinyl with Kids']] }
+    ].map(m => ({ ...m, stats: m.stats.map(([k, v]) => ({ k, v })) }));
+
+    const areas = [
+      ['Southeast Calgary', ['Acadia', 'Auburn Bay', 'Chaparral', 'Copperfield', 'Cranston', 'Douglasdale', 'Inglewood', 'Mahogany', 'McKenzie Towne', 'Ogden', 'Riverbend', 'Seton', 'Willow Park']],
+      ['Southwest Calgary', ['Altadore', 'Aspen Woods', 'Bridlewood', 'Canyon Meadows', 'Evergreen', 'Killarney', 'Lakeview', 'Marda Loop', 'Signal Hill', 'Silverado', 'Springbank Hill', 'Woodbine']],
+      ['Northeast Calgary', ['Coral Springs', 'Cornerstone', 'Falconridge', 'Martindale', 'Monterey Park', 'Redstone', 'Saddle Ridge', 'Skyview Ranch', 'Taradale', 'Temple', 'Whitehorn']],
+      ['Northwest Calgary', ['Arbour Lake', 'Bowness', 'Citadel', 'Evanston', 'Hidden Valley', 'Hillhurst', 'Nolan Hill', 'Panorama Hills', 'Royal Oak', 'Sage Hill', 'Tuscany', 'Varsity']],
+      ['Outside the city', ['Airdrie', 'Chestermere', 'Cochrane', 'De Winton', 'Langdon', 'Okotoks', 'Rocky View County', 'Strathmore']]
+    ];
+
+    const generalFaqs = [
+      ['Who comes to the job?', 'A licensed electrician from our team. Andrew, the owner and Master Electrician, oversees every job. Harold runs the office and books the visit.'],
+      ['What area do you work in?', 'Calgary and the surrounding area, including Airdrie, Cochrane, Okotoks, Chestermere, and acreages in Rocky View County.'],
+      ['Are you licensed and insured?', 'Yes. Blue Electrical Services and Technology is a licensed Alberta electrical contractor, WCB #6852783, with $5M general liability.'],
+      ['How do I get a price?', 'Call or send photos of the panel and the work area. Small jobs are quoted from photos. Larger work gets a $94.95 Design Quote that covers the site visit and load calculation.'],
+      ['What does your minimum service charge include?', 'Travel to site within city, and first 30 minutes of time. Shop charges and administration.'],
+      ['Do you pull permits?', 'Every time the code requires one. The permit and inspection are included in the quote.'],
+      ['What is Club Blue 22?', '$22 Dollars a Month. Designed for Property Management Teams. A 22-month maintenance agreement for homes and small commercial spaces: scheduled visits, priority service, and 22% off Master Electrician rates.'],
+      ['What is your warranty?', 'We have a 5 year warranty on hard materials, 2 years on soft materials, and 30 days on consumables. Details available on estimate.'],
+      ['Do you do emergency calls?', 'Emergency service is available. If something is sparking, smoking, or hot to the touch, shut the main off first and then call.']
+    ];
+
+    let clock;
+    try { clock = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Edmonton', hour: 'numeric', minute: '2-digit', hour12: true }).format(this.state.now); }
+    catch (e) { clock = this.state.now.toLocaleTimeString(); }
+
+    const seo = {
+      home: ['Blue Electrical Services & Technology | Licensed Electricians in Calgary', 'Master Electricians in Calgary. Panel upgrades, generators and backup power, pot lights, repairs, hot tub and garage wiring. Quality and Long-Term Performance.'],
+      services: ['Electrical Services in Calgary | Blue Electrical', 'Residential and light-commercial electrical work in Calgary by Master Electricians. Every job permitted and inspected.'],
+      service: [cur.name + ' in Calgary | Blue Electrical', cur.blurb + ' Master Electricians, Calgary and area.'],
+      reviews: ['Reviews | Blue Electrical Calgary', 'What Calgary homeowners and business owners say about working with Blue Electrical Services and Technology.'],
+      team: ['Our Team | Blue Electrical Calgary', 'Meet Andrew, Owner and Master Electrician, and Harold, office and dispatch.'],
+      areas: ['Service Areas | Electricians in Calgary, Airdrie, Cochrane, Okotoks', 'Blue Electrical serves Calgary and the surrounding area from 1844 76 Ave SE.'],
+      faq: ['FAQ | Blue Electrical Calgary', 'Licensing, permits, pricing, service call minimums, and Club Blue 22 answered.'],
+      contact: ['Request a Quote | Blue Electrical Calgary', 'Call ' + phone + ' or send the form. Master Electricians in Calgary reply within the hour during business hours.']
+    };
+    [this._seoTitle, this._seoDesc] = seo[route] || seo.home;
+
+    const f = this.state.form;
+    return {
+      hours: { ...this.hoursInfo(), bottom: this.state.width < 768 ? '96px' : '20px' },
+      phone, clock, showDraft, isMobile, isDesktop: !isMobile, isPhone: this.state.width < 768,
+      menuOpen: isMobile && this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      pagePadBottom: this.state.width < 768 ? '80px' : '0px',
+      telHref: 'tel:' + phone.replace(/[^0-9+]/g, ''),
+      heroGhostProps: { style: { color: 'var(--text-on-dark)', borderColor: 'rgba(255,255,255,0.35)' } },
+      go, navItems,
+      servicesBackHref: showServices ? '/services' : '/',
+      servicesBackLabel: showServices ? 'All services' : 'Back to home',
+      is: { home: route === 'home', services: route === 'services', service: route === 'service', reviews: route === 'reviews', team: route === 'team', areas: route === 'areas', faq: route === 'faq', contact: route === 'contact' },
+      workPhotos: [['stairwell-chandelier','Stairwell chandelier'],['dining-chandelier','Dining room chandelier'],['orb-chandelier','Orb pendant'],['band-sign-light','Lit sign, commercial'],['blinds-aluminum-backing','Heat-reflective blinds']].map(([f, cap]) => ({ src: 'assets/photos/' + f + '.jpg', cap, id: 'work-' + f })),
+      services, svc, reviews, homeReviews: reviews.slice(0, 3), team,
+      faqs: mkFaqs(generalFaqs),
+      areaGroups: areas.map(([name, places]) => ({ name, count: places.length + ' communities', places: places.map(p => ({ name: p })) })),
+      jobOptions: svcData.map(s => ({ value: s.id, label: s.name })).concat([{ value: 'other', label: 'Something else' }]),
+      form: {
+        name: f.name, phone: f.phone, job: f.job, notes: f.notes, text: f.text,
+        setName: e => this.setField('name', e.target.value),
+        setPhone: e => this.setField('phone', e.target.value),
+        setJob: e => this.setField('job', e.target.value),
+        setNotes: e => this.setField('notes', e.target.value),
+        setText: () => this.setField('text', !f.text),
+        submit: () => this.submitQuote(svcData),
+        sending: this.state.sendStatus === 'sending',
+        btnLabel: this.state.sendStatus === 'sending' ? 'Sending…' : 'Send the request',
+        hasMsg: !!this.state.sendMsg,
+        msg: this.state.sendMsg,
+        msgColor: this.state.sendStatus === 'sent' ? 'var(--feedback-success-text, #1e7a3c)' : 'var(--feedback-danger-text)'
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

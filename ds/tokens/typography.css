@@ -1,0 +1,61 @@
+/* ============================================================
+   BLUE Electrical Services & Technology — Typography Tokens
+   Fonts: Poppins (display/headings — geometric-rounded, echoes the
+   logo's bold "BLUE" wordmark) + Work Sans (body/UI — clean, warm,
+   built for trades/technical copy). Sourced from Google Fonts —
+   see readme.md "Fonts" note re: substitution.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---- Base: font families ---- */
+  --font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body:    'Work Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  /* ---- Base: weights ---- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+
+  /* ---- Base: type scale (px) ---- */
+  --font-size-xs:   13px;
+  --font-size-sm:   15px;
+  --font-size-base: 17px;
+  --font-size-md:   19px;
+  --font-size-lg:   22px;
+  --font-size-xl:   27px;
+  --font-size-2xl:  34px;
+  --font-size-3xl:  44px;
+  --font-size-4xl:  56px;
+  --font-size-5xl:  72px;
+
+  /* ---- Base: line heights ---- */
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-loose:  1.7;
+
+  /* ---- Base: letter spacing ---- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:  0.04em;
+  --tracking-widest: 0.12em;
+
+  /* ---- Semantic: text roles ---- */
+  --text-display-1: 700 var(--font-size-5xl)/var(--leading-tight) var(--font-display);
+  --text-display-2: 700 var(--font-size-4xl)/var(--leading-tight) var(--font-display);
+  --text-h1: 700 var(--font-size-3xl)/var(--leading-tight) var(--font-display);
+  --text-h2: 600 var(--font-size-2xl)/var(--leading-snug) var(--font-display);
+  --text-h3: 600 var(--font-size-xl)/var(--leading-snug) var(--font-display);
+  --text-h4: 600 var(--font-size-lg)/var(--leading-snug) var(--font-display);
+  --text-eyebrow: 700 var(--font-size-xs)/var(--leading-normal) var(--font-body);
+  --text-body-lg: 400 var(--font-size-md)/var(--leading-normal) var(--font-body);
+  --text-body: 400 var(--font-size-base)/var(--leading-normal) var(--font-body);
+  --text-body-sm: 400 var(--font-size-sm)/var(--leading-normal) var(--font-body);
+  --text-caption: 500 var(--font-size-xs)/var(--leading-normal) var(--font-body);
+  --text-button: 600 var(--font-size-base)/var(--leading-normal) var(--font-body);
+}

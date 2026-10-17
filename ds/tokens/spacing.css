@@ -1,0 +1,57 @@
+/* ============================================================
+   BLUE Electrical Services & Technology — Spacing, Radius, Shadow
+   ============================================================ */
+
+:root {
+  /* ---- Base: spacing scale ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---- Semantic: layout spacing ---- */
+  --gap-control: var(--space-2);      /* icon-to-label gaps etc */
+  --gap-form:    var(--space-4);
+  --pad-card:    var(--space-6);
+  --pad-section-y: var(--space-20);
+  --pad-section-y-sm: var(--space-12);
+  --max-content-width: 1200px;
+
+  /* ---- Base: corner radius ---- */
+  --radius-xs:  4px;
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 999px;
+
+  /* ---- Semantic: component radius ---- */
+  --radius-button: var(--radius-sm);
+  --radius-input:  var(--radius-sm);
+  --radius-card:   var(--radius-md);
+  --radius-badge:  var(--radius-full);
+  --radius-dialog: var(--radius-lg);
+
+  /* ---- Base: shadows (soft, low-elevation — trades brand, not glossy) ---- */
+  --shadow-xs: 0 1px 2px rgba(14,16,19,0.06);
+  --shadow-sm: 0 2px 6px rgba(14,16,19,0.08);
+  --shadow-md: 0 6px 16px rgba(14,16,19,0.10);
+  --shadow-lg: 0 16px 40px rgba(14,16,19,0.14);
+  --shadow-gold-glow: 0 0 0 1px rgba(201,162,39,0.4), 0 4px 14px rgba(201,162,39,0.18);
+
+  /* ---- Base: motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 200ms; /* @kind other */
+  --duration-slow: 320ms; /* @kind other */
+}

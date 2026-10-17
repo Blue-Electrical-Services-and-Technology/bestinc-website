@@ -1,0 +1,110 @@
+/* ============================================================
+   BLUE Electrical Services & Technology — Color Tokens
+   Sampled from BEST Inc Logo (uploads/BEST Inc Logo.jpg): rgb(51,145,206)
+   Palette brief: blue, black and white, with plenty of gold accents.
+   ============================================================ */
+
+:root {
+  /* ---- Base: Blue (brand primary, from logo) ---- */
+  --blue-50:  #eef6fc;
+  --blue-100: #d6ebf7;
+  --blue-200: #adcdeb;
+  --blue-300: #7ab3e0;
+  --blue-400: #4d9dd6;
+  --blue-500: #3391ce;  /* logo-sampled blue */
+  --blue-600: #2778ab;
+  --blue-700: #1f5f89;
+  --blue-800: #184968;
+  --blue-900: #123449;
+
+  /* ---- Base: Gold (accent — metallic, premium) ---- */
+  --gold-50:  #fbf6e8;
+  --gold-100: #f3e6bc;
+  --gold-200: #e9d288;
+  --gold-300: #ddba54;
+  --gold-400: #cda52f;
+  --gold-500: #c9a227;  /* primary gold accent */
+  --gold-600: #a9840f;
+  --gold-700: #8a6b0e;
+  --gold-800: #6b520c;
+  --gold-900: #4a3908;
+
+  /* ---- Base: Neutrals (black / white / grays) ---- */
+  --neutral-0:   #ffffff;
+  --neutral-50:  #f7f8f9;
+  --neutral-100: #eceef0;
+  --neutral-200: #d9dce0;
+  --neutral-300: #b9bec5;
+  --neutral-400: #8b929c;
+  --neutral-500: #636b76;
+  --neutral-600: #464e59;
+  --neutral-700: #2f353d;
+  --neutral-800: #1c1f24;
+  --neutral-900: #0e1013;  /* near-black, warmer than pure black */
+  --neutral-1000: #000000;
+
+  /* ---- Semantic: surfaces ---- */
+  --surface-page:      var(--neutral-0);
+  --surface-page-dark: var(--neutral-900);
+  --surface-card:      var(--neutral-0);
+  --surface-sunken:    var(--neutral-50);
+  --surface-inverse:   var(--neutral-900);
+  --surface-brand:     var(--blue-600);
+  --surface-brand-deep: var(--blue-900);
+  --surface-gold:      var(--gold-500);
+
+  /* ---- Semantic: text ---- */
+  --text-primary:    var(--neutral-900);
+  --text-secondary:  var(--neutral-600);
+  --text-tertiary:   var(--neutral-400);
+  --text-on-brand:   var(--neutral-0);
+  --text-on-dark:    var(--neutral-0);
+  --text-on-dark-secondary: var(--neutral-300);
+  --text-brand:      var(--blue-600);
+  --text-gold:       var(--gold-600);
+  --text-link:       var(--blue-600);
+  --text-link-hover: var(--blue-700);
+
+  /* ---- Semantic: borders ---- */
+  --border-subtle:  var(--neutral-100);
+  --border-default: var(--neutral-200);
+  --border-strong:  var(--neutral-400);
+  --border-brand:   var(--blue-500);
+  --border-gold:    var(--gold-500);
+  --border-on-dark: rgba(255,255,255,0.14);
+
+  /* ---- Semantic: actions ---- */
+  --action-primary-bg:        var(--blue-600);
+  --action-primary-bg-hover:  var(--blue-700);
+  --action-primary-bg-active: var(--blue-800);
+  --action-primary-text:      var(--neutral-0);
+
+  --action-gold-bg:        var(--gold-500);
+  --action-gold-bg-hover:  var(--gold-600);
+  --action-gold-bg-active: var(--gold-700);
+  --action-gold-text:      var(--neutral-900);
+
+  --action-dark-bg:        var(--neutral-900);
+  --action-dark-bg-hover:  var(--neutral-800);
+  --action-dark-text:      var(--neutral-0);
+
+  --action-ghost-border:      var(--neutral-300);
+  --action-ghost-border-hover: var(--neutral-500);
+
+  --action-disabled-bg:   var(--neutral-100);
+  --action-disabled-text: var(--neutral-400);
+
+  /* ---- Semantic: feedback ---- */
+  --feedback-success-bg:   #e8f5ec;
+  --feedback-success-text: #1e7a3d;
+  --feedback-warning-bg:   var(--gold-50);
+  --feedback-warning-text: var(--gold-700);
+  --feedback-danger-bg:    #fbeaea;
+  --feedback-danger-text:  #a5312a;
+  --feedback-info-bg:      var(--blue-50);
+  --feedback-info-text:    var(--blue-700);
+
+  /* ---- Focus ring ---- */
+  --focus-ring: 0 0 0 3px rgba(51,145,206,0.35);
+  --focus-ring-gold: 0 0 0 3px rgba(201,162,39,0.35);
+}
